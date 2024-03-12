@@ -4,9 +4,6 @@ import java.lang.Exception
 fun main(){
     val menus:List<Food> = init()
 
-    // 메뉴 초기화
-   // menus.forEach { it.displayOptions() }
-
     while(true){
         println("서브웨이 메뉴:")
         println("1. Salads(Egg Slice, Spicy Shrimp, Spicy Italian, Steak Cheese, Chicken Bacon, KBBQ)")
@@ -19,7 +16,7 @@ fun main(){
 
         when (categoryChoice) {
             in 1..3 -> if (categoryChoice != null) {
-                orderItem(menus[categoryChoice - 1])
+                orderSebuItem(menus[categoryChoice - 1])
             }
             0 -> {
                 println("프로그램을 종료합니다.")
@@ -33,12 +30,15 @@ fun main(){
     }
 }
 
-fun orderItem(menuCategory: Food) {
+fun orderSebuItem(menuCategory: Food) {
     menuCategory.displayOptions()
-    print("세부 메뉴를 선택해주세요. (1-${menuCategory.foodOptions.size}): ")
+    print("세부 메뉴를 선택해주세요. : ")
     val itemChoice = readLine()?.toIntOrNull()
 
-    val orderedItem = itemChoice?.let { menuCategory.orderItem(it) }
+    val orderedItem = itemChoice?.let {
+        sebumenuNumber->
+        menuCategory.orderItem(sebumenuNumber)
+    }
 
     orderedItem?.let {
         println("당신의 주문입니다 => $it")
