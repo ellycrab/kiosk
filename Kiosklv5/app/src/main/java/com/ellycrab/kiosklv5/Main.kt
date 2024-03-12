@@ -35,7 +35,7 @@ fun main() {
         when (val categoryChoice = readLine()?.toIntOrNull()) {
             in 1..3 -> {
                 val menuCategory = menus[categoryChoice?.minus(1)!!]
-                orderItem(menuCategory, customer.balance)
+                orderSebuItem(menuCategory, customer.balance)
             }
             0 -> {
                 println("프로그램을 종료합니다.")
@@ -59,7 +59,7 @@ fun main() {
     }
 }
 
-fun orderItem(menuCategory: Food, customerBalance: Double) {
+fun orderSebuItem(menuCategory: Food, customerBalance: Double) {
     menuCategory.displayOptions()
     print("세부 메뉴를 선택해주세요. (1-${menuCategory.foodOptions.size}): ")
     val itemChoice = readLine()?.toIntOrNull()
