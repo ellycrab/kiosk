@@ -60,11 +60,11 @@ fun orderItem(menuCategory: Food, customerBalance: Double) {
 
         orderedItem?.let {
             if (customerBalance >= it.second) {
-                // Sufficient balance, proceed with the order
+                // 잔액충분할때
                 println("당신의 주문입니다 => $it")
                 println("주문 후 잔액: ${customerBalance - it.second}")
             } else {
-                // Insufficient balance
+                // 잔액부족
                 println("잔액이 부족합니다. 주문을 완료할 수 없습니다.")
             }
         } ?: println("유효하지 않은 세부 선택입니다.")
