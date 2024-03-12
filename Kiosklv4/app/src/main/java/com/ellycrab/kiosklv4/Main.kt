@@ -60,7 +60,7 @@ fun orderItem(menuCategory: Food, customerBalance: Double) {
 
         orderedItem?.let {
             if (customerBalance >= it.second) {
-                // 잔액충분할때
+                // 잔액충분
                 println("당신의 주문입니다 => $it")
                 println("주문 후 잔액: ${customerBalance - it.second}")
             } else {
