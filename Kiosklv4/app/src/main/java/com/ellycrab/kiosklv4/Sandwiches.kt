@@ -1,6 +1,9 @@
 package com.ellycrab.kiosklv4
 
 class Sandwiches:Food {
+
+    override val categoryName: String = "Sandwiches"
+
     override val foodOptions: List<Pair<String, Double>> = listOf(
         "Egg Slice" to 3000.0,
         "Italian BMT" to 6500.0,
@@ -10,7 +13,7 @@ class Sandwiches:Food {
         "Roasted Chicken" to 8000.0
     )
 
-    override val categoryName: String = "Sandwiches"
+
 
     override fun displayOptions() {
         println("$categoryName 옵션:")
